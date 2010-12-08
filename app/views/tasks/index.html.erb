@@ -1,0 +1,32 @@
+
+<div id="task_list">
+<h1>Dream it. List it. Do it.</h1>
+  <table>
+    <% @tasks.each do |task| %>
+        <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+
+          <td class="list_description">
+            <dl>
+              <dt><%= task.task %></dt>
+              <dd><%= task.ready %></dd>
+            </dl>
+          </td>
+          <td class="list_actions">
+            <%= link_to 'Ещё', task %>
+            <br/>
+            <%= link_to 'Всё не так', edit_task_path(task) %>
+            <br/>
+            <%= link_to 'Прибить', task,
+                        :confirm => 'Are you sure?',
+                        :method  => :delete %>
+             <br/>
+            <%= link_to 'В твиттер',
+                        :action  => :tweet,
+            :id => task.id%>
+          </td>
+        </tr>
+    <% end %>
+  </table>
+</div>
+<br/>
+<%= link_to 'Ещё, ещё!', new_task_path %>
