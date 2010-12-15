@@ -1,6 +1,6 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
+ruby:
   task: MyString
   ready: false
   duedate: 2010-11-30 17:12:15
