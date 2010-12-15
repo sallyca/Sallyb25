@@ -1,7 +1,7 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 ruby:
-  task: MyString
+  task: Ruby
   ready: false
   duedate: 2010-11-30 17:12:15
 
