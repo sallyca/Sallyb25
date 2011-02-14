@@ -1,0 +1,37 @@
+<%= form_for(@clipping) do |f| %>
+  <% if @clipping.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@clipping.errors.count, "error") %> prohibited this clipping from being saved:</h2>
+
+      <ul>
+      <% @clipping.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :book %><br />
+    <%= f.text_field :book %>
+  </div>
+  <div class="field">
+    <%= f.label :author %><br />
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.datetime_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :quote %><br />
+    <%= f.text_area :quote %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

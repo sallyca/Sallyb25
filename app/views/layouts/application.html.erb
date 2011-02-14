@@ -2,13 +2,27 @@
 <html>
 <head>
   <title>Rubymas</title>
-  <%= stylesheet_link_tag :all %>
+  <%= stylesheet_link_tag :all %>Szkolka
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
-<body>
 
-<%= yield %>
+
+<body id="store">
+<div id="banner">
+  <%= image_tag("logo.png") %>
+  <%= @page_title || "Sally's Bookshelf" %>
+</div>
+<div id="columns">
+  <div id="side">
+    <a href="https://kindle.amazon.com/most_popular">Books</a><br/>
+    <a href="https://kindle.amazon.com/work/outliers-story-success-ebook/B0017J9YR8/B001ANYDAO">Highlights</a>
+  </div>
+  <div id="main">
+    <%= yield %>
+  </div>
+</div>
+
 
 </body>
 </html>
