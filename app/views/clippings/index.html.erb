@@ -12,20 +12,27 @@
     <th></th>
   </tr>
 
-<% @clippings.each do |clipping| %>
-  <tr>
-    <td><%= clipping.book %></td>
-    <td><%= clipping.author %></td>
-    <td><%= clipping.location %></td>
-    <td><%= clipping.date %></td>
-    <td><%= clipping.quote %></td>
-    <td><%= link_to 'Show', clipping %></td>
-    <td><%= link_to 'Edit', edit_clipping_path(clipping) %></td>
-    <td><%= link_to 'Destroy', clipping, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+  <% @clippings.each do |clipping| %>
+      <tr>
+        <td><%= clipping.book %></td>
+        <td><%= clipping.author %></td>
+        <td><%= clipping.location %></td>
+        <td><%= clipping.date %></td>
+        <td><%= clipping.quote %></td>
+        <td><%= link_to 'Show', clipping %></td>
+        <td><%= link_to 'Edit', edit_clipping_path(clipping) %></td>
+        <td><%= link_to 'Destroy', clipping, :confirm => 'Are you sure?', :method => :delete %></td>
+      </tr>
+  <% end %>
 </table>
 
-<br />
+<br/>
 
 <%= link_to 'New Clipping', new_clipping_path %>
+
+<h1>Kindle Clippings Upload</h1>
+<%= form_tag ({:action => 'load'}) %>
+<p><label for="load">Select File</label> :
+  <%= file_field 'select', 'datafile' %></p>
+<%= submit_tag "Process" %>
+<% form_tag %>

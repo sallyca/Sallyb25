@@ -10,12 +10,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101130151215) do
+ActiveRecord::Schema.define(:version => 20110214171430) do
 
   create_table "checklists", :force => true do |t|
     t.string   "task"
     t.boolean  "ready"
     t.datetime "duedate"
+  end
+
+  create_table "clippings", :force => true do |t|
+    t.string   "book"
+    t.string   "author"
+    t.string   "location"
+    t.datetime "date"
+    t.text     "quote"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "tasks", :force => true do |t|

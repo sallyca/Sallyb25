@@ -6,7 +6,7 @@ class ClippingsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @clippings }
+      format.xml { render :xml => @clippings }
     end
   end
 
@@ -17,7 +17,7 @@ class ClippingsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @clipping }
+      format.xml { render :xml => @clipping }
     end
   end
 
@@ -28,7 +28,7 @@ class ClippingsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @clipping }
+      format.xml { render :xml => @clipping }
     end
   end
 
@@ -45,10 +45,10 @@ class ClippingsController < ApplicationController
     respond_to do |format|
       if @clipping.save
         format.html { redirect_to(@clipping, :notice => 'Clipping was successfully created.') }
-        format.xml  { render :xml => @clipping, :status => :created, :location => @clipping }
+        format.xml { render :xml => @clipping, :status => :created, :location => @clipping }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @clipping.errors, :status => :unprocessable_entity }
+        format.xml { render :xml => @clipping.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -61,10 +61,10 @@ class ClippingsController < ApplicationController
     respond_to do |format|
       if @clipping.update_attributes(params[:clipping])
         format.html { redirect_to(@clipping, :notice => 'Clipping was successfully updated.') }
-        format.xml  { head :ok }
+        format.xml { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @clipping.errors, :status => :unprocessable_entity }
+        format.xml { render :xml => @clipping.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -77,7 +77,16 @@ class ClippingsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to(clippings_url) }
-      format.xml  { head :ok }
+      format.xml { head :ok }
     end
+  end
+
+  def load
+    @clippings_kindle = load_from_file('')
+
+  end
+
+  def load_from_file(file_name)
+
   end
 end
