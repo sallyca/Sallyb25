@@ -27,7 +27,7 @@ class ClippingsController < ApplicationController
     @clipping = Clipping.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html # upload.html.erb
       format.xml { render :xml => @clipping }
     end
   end
@@ -81,12 +81,6 @@ class ClippingsController < ApplicationController
     end
   end
 
-  def load
-    @clippings_kindle = load_from_file('')
+
 
   end
-
-  def load_from_file(file_name)
-
-  end
-end

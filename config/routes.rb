@@ -1,4 +1,6 @@
 Rubymas::Application.routes.draw do
+  resources :kindle_files
+
   resources :clippings
 
   get "kindle/index"
