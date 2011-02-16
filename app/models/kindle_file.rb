@@ -7,9 +7,9 @@ class KindleFile < ActiveRecord::Base
     path      = File.join(directory, name)
     # write the file
     File.open(path, "wb") { |f| f.write(upload['datafile'].read) }
-    @kindle_file         =KindleFile.new
+    @kindle_file         = KindleFile.new
     @kindle_file.contents=File.open(path, "rb").read
-
+    logger.info 'kindle file contents:'+@kindle_file.contents
   end
 
 

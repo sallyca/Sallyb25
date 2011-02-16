@@ -2,6 +2,7 @@ class CreateKindleFiles < ActiveRecord::Migration
   def self.up
     create_table :kindle_files do |t|
       t.text :contents
+      t.text :wikimarkup
       t.timestamps
     end
   end

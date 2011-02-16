@@ -1,15 +1,15 @@
 class KindleFilesController < ApplicationController
 
   def index
-    @kindle_file = KindleFile.all
+    @kindle_files = KindleFile.all
     respond_to do |format|
       format.html # index.html.erb
-      format.xml { render :xml => @kindle_file }
+      format.xml { render :xml => @kindle_files }
     end
   end
 
   def upload
-    @kindle_file = KindleFile.save(params[:upload])
+    @kindle_files = KindleFile.save(params[:upload])
     respond_to do |format|
       format.html # upload.html.erb
       format.xml { render :xml => @kindle_file }

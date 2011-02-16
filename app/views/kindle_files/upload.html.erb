@@ -4,9 +4,11 @@
     <th>Contents</th>
 
   </tr>
-  <tr>
-    <td><%= @kindle_file.contents %></td>
-  </tr>
+  <% @kindle_files.each do |kindle_file| %>
+      <tr>
+        <td><%= kindle_file %></td>
+      </tr>
+  <% end %>
 </table>
 
 <%= link_to 'Back', kindle_files_path %>
