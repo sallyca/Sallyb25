@@ -6,7 +6,38 @@
   </tr>
   <% @kindle_files.each do |kindle_file| %>
       <tr>
-        <td><%= kindle_file %></td>
+        <td><%= kindle_file.contents %></td>
+      </tr>
+  <% end %>
+</table>
+
+<h1>Filter by</h1>
+TODO: Select Filter Checkbox
+
+<h1>All Clippings</h1>
+
+<table>
+  <tr>
+    <th>Book</th>
+    <th>Author</th>
+    <th>Type</th>
+    <th>Location</th>
+    <th>Date</th>
+    <th>Quote</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @clips.each do |clip| %>
+      <tr>
+        <td><%= clip.book_title%></td>
+        <td><%= clip.author%></td>
+        <td><%= clip.type%></td>
+        <td><%= clip.location%></td>
+        <td><%= clip.added_on%></td>
+        <td><%= clip.content%></td>
+
       </tr>
   <% end %>
 </table>

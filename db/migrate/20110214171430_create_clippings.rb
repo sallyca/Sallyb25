@@ -3,7 +3,7 @@ class CreateClippings < ActiveRecord::Migration
     create_table :clippings do |t|
       t.string :book
       t.string :author
-      t.string :location
+      t.string :location_nums
       t.timestamp :date
       t.text :quote
 

@@ -1,5 +1,4 @@
-class Clipping < ActiveRecord::Base
-
+class Clipping < ActiveRecord::Base  
 
 
 end
