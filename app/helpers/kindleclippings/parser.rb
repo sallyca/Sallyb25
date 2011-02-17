@@ -4,8 +4,14 @@ module KindleClippings
 
   class Parser
 
+    def parse_url(path)
+      file_content = open(URI.parse(path)) { |f| f.read }
+
+      parse(file_content)
+    end
+
     def parse_file(path)
-      file_content = open(URI.parse(path)) {|f| f.read }
+      file_content = open(path) { |f| f.read }
 
       parse(file_content)
     end

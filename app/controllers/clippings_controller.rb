@@ -25,9 +25,18 @@ class ClippingsController < ApplicationController
   # GET /clippings/new.xml
   def new
     @clipping = Clipping.new
+    if params[:title]
+      @clipping.book =params[:title]
+    end
+    if params[:author]
+      @clipping.author =params[:author]
+    end
+    if params[:quote]
+      @clipping.quote =params[:quote]
+    end
 
     respond_to do |format|
-      format.html # create.html.erb
+      format.html # upload.html.erb
       format.xml { render :xml => @clipping }
     end
   end
@@ -82,5 +91,4 @@ class ClippingsController < ApplicationController
   end
 
 
-
-  end
+end

@@ -1,4 +1,4 @@
- # encoding: utf-8
+# encoding: utf-8
 module KindleClippings
   class Clip
     require 'date'
@@ -10,17 +10,18 @@ module KindleClippings
 
     def initialize(title, author, type, location, added_on, content)
       @book_title = title
-      @author = author
-      @type = type
-      @location = location
+      @author     = author
+      @type       = type
+      @location   = location
 #      @added_on = DateTime.strptime(added_on, "%A, %B %d, %Y, %I:%M %p")
-      @content = content
+      @content    = content
     end
+#
+#    def to_s
+#      "#{@book_title} (#{author})\n" +
+#      "- #{@type} Loc. #{@location} | Added on #{@added_on.strftime('%A, %B %d, %Y, %I:%M %p')}\n\n" +
+#      "#{@content}"
+#    end
 
-    def to_s
-      "#{@book_title} (#{author})\n" +
-      "- #{@type} Loc. #{@location} | Added on #{@added_on.strftime('%A, %B %d, %Y, %I:%M %p')}\n\n" +
-      "#{@content}"
-    end
   end
 end

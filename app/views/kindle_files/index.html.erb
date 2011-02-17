@@ -1,9 +1,37 @@
 <h1>Kindle Clippings Processing</h1>
 
-<% form_for :kindle_file, :html => {:multipart => true} do |kindle_file| %>
+<% form_for :kindle_file, :url => {:action => "upload" },:html => {:multipart => true} do |kindle_file| %>
     <%= kindle_file.file_field :text %>
     <%= submit_tag "Upload" %>
 <% end %>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+<h1>Yep, Known Clippings' Files</h1>
+<table>
+  <tr>
+    <th>File</th>
+    <th>Url</th>
+    <th>WikiContent</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @kindle_files.each do |kindle_file| %>
+      <tr>
+        <td></td>
+        <td><%= kindle_file.contents%></td>
+        <td></td>
+        <td><%= link_to 'Show', :action=>"parse", :s3_url=>kindle_file.contents, :id=>kindle_file.id %></td>
+        <td></td>
+        <td><%= link_to 'Destroy', kindle_file, :confirm => 'Are you sure?', :method => :delete %></td>
+      </tr>
+  <% end %>
+</table>
 
 
 

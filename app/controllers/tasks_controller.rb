@@ -29,7 +29,7 @@ class TasksController < ApplicationController
     @task = Task.new
 
     respond_to do |format|
-      format.html # create.html.erb
+      format.html # upload.html.erb
       format.xml  { render :xml => @task }
     end
   end

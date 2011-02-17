@@ -19,17 +19,20 @@ class KindleFile < ActiveRecord::Base
     # write the file
     File.open(path, "wb") { |f| f.write(upload['datafile'].read) }
     @kindle_file         = KindleFile.new
-    @kindle_file.contents=File.open(path, "rb").read
+    @kindle_file.contents=path
+
+    return @kindle_file
+  end
+
+  def self.parse_local(kindle_file_name)
     @parser              = KindleClippings::Parser.new
-    @clips               =@parser.parse_file(path)
-    logger.info 'kindle file contents:'+@kindle_file.contents
+    @clips               =@parser.parse_file(kindle_file_name)
     return @clips
   end
 
   def self.parse(kindle_file_name)
     @parser = KindleClippings::Parser.new
-    @clips  =@parser.parse_file(kindle_file_name)
-#    logger.info 'kindle file contents:'+@kindle_file.contents
+    @clips  =@parser.parse_url(kindle_file_name)
     return @clips
   end
 
