@@ -4,21 +4,8 @@
     <%= kindle_file.file_field :text %>
     <%= submit_tag "Upload" %>
 <% end %>
-<br/>
-<br/>
-<br/>
-<h3>Choose Uploaded File:</h3>
-<table>
-  <tr>
-    <th>Contents</th>
 
-  </tr>
-  <% @kindle_files.each do |kindle_file| %>
-      <tr>
-        <td><%= kindle_file.text.url %></td>
-      </tr>
-  <% end %>
-</table>
+
 
 
 
