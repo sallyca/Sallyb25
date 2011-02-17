@@ -1,10 +1,27 @@
 <h1>Kindle Clippings Processing</h1>
 
-<%= form_tag({:action => 'upload'}, :multipart => true) %>
-<p><label for="upload_file">Select File</label> :
-  <%= file_field 'upload', 'datafile' %></p>
-<%= submit_tag "Upload" %>
-<%= form_tag %>
+<% form_for :kindle_file, :html => {:multipart => true} do |kindle_file| %>
+    <%= kindle_file.file_field :text %>
+    <%= submit_tag "Upload" %>
+<% end %>
+<br/>
+<br/>
+<br/>
+<h3>Choose Uploaded File:</h3>
+<table>
+  <tr>
+    <th>Contents</th>
+
+  </tr>
+  <% @kindle_files.each do |kindle_file| %>
+      <tr>
+        <td><%= kindle_file.text.url %></td>
+      </tr>
+  <% end %>
+</table>
+
+
+
 
 
 

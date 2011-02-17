@@ -8,12 +8,12 @@ class KindleFilesController < ApplicationController
     end
   end
 
-  def upload
-    @kindle_files=KindleFile.all
-    @clips = KindleFile.save(params[:upload])
+  def create
+    @kindle_file = KindleFile.create(params[:kindle_file])
+    @clips = KindleFile.parse(@kindle_file.text.url)
     
     respond_to do |format|
-      format.html # upload.html.erb
+      format.html # create.html.erb
       format.xml { render :xml => @kindle_file }
     end
   end

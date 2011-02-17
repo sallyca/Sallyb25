@@ -27,7 +27,7 @@ class ClippingsController < ApplicationController
     @clipping = Clipping.new
 
     respond_to do |format|
-      format.html # upload.html.erb
+      format.html # create.html.erb
       format.xml { render :xml => @clipping }
     end
   end

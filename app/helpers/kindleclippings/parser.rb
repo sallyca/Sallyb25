@@ -1,10 +1,11 @@
 # encoding: utf-8
+require 'open-uri'
 module KindleClippings
 
   class Parser
 
     def parse_file(path)
-      file_content = open(path, 'r:utf-8').read
+      file_content = open(URI.parse(path)) {|f| f.read }
 
       parse(file_content)
     end
