@@ -23,7 +23,15 @@ module KindleClippings
     end
 
     def book_list()
-      self.sort_by{ |annotation| annotation.send(:book_title) }
+      self.sort_by { |annotation| annotation.send(:book_title) }
+    end
+
+    def parse_books()  
+#      self.each{|a| books.push(a.send(:book_title))}.uniq
+#      return books.uniq
+      self.inject( {} ) do | hash, obj |
+                        hash.merge({ obj.send(:book_title) => obj })
+        end
     end
 
     private

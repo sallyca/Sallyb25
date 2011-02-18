@@ -15,7 +15,7 @@ class KindleFilesController < ApplicationController
 
 #    @kindle_file = KindleFile.save(params[:upload])
 #    @clips = KindleFile.parse_local(@kindle_file.contents)
-
+      @book_list=@clips.parse_books
     @kindle_file.save
 
     respond_to do |format|
@@ -29,6 +29,7 @@ class KindleFilesController < ApplicationController
 #    @clips = KindleFile.parse_local(params[:s3_url])
 
     @clips       = KindleFile.parse(params[:s3_url]).book_list
+    @book_list= KindleFile.parse(params[:s3_url]).parse_books
     @kindle_file = KindleFile.find(params[:id])
 #
     respond_to do |format|

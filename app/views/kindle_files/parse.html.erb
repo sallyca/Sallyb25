@@ -1,9 +1,10 @@
 TODO: Select Filter Checkbox
 
 <h1>All Clippings</h1>
-
+Filter: <%= select("search", "title", @book_list.map {|u| [u.book_title]}) %>
 <table>
   <tr>
+    <th></th>
     <th>Book</th>
     <th>Author</th>
     <th>Type</th>
@@ -17,6 +18,7 @@ TODO: Select Filter Checkbox
 
   <% @clips.each do |clip| %>
       <tr>
+        <td></td>
         <td><%= clip.book_title %></td>
         <td><%= clip.author %></td>
         <td><%= clip.type %></td>
