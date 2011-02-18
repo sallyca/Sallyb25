@@ -22,6 +22,10 @@ module KindleClippings
       filter_by_property(:book_title, book)
     end
 
+    def book_list()
+      self.sort_by{ |annotation| annotation.send(:book_title) }
+    end
+
     private
 
     def filter_by_property(property, value)

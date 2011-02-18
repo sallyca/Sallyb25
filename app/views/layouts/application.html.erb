@@ -15,14 +15,20 @@
 </div>
 <div id="columns">
   <div id="side">
-    <p>Kindle Start:</p>
-    <%= link_to 'View Clippings', clippings_path %><br/>
+    <p>Kindle Start:<br/>
+    <%= link_to 'View Clippings', clippings_path %>
+    <br/>
     <%= link_to 'Upload From Kindle', kindle_files_path %>
+      </p>
     <br/>
-    <br/>
-    <p>Amazon Stuff:</p>
+    <p>Amazon Stuff:<br/>
     <a href="https://kindle.amazon.com/most_popular">Books</a><br/>
     <a href="https://kindle.amazon.com/work/outliers-story-success-ebook/B0017J9YR8/B001ANYDAO">Highlights</a>
+    </p>
+    <br/>
+    <p>Run to Wiki:<br/>
+    <a href="http://sallyca.wikispaces.com">Sample Wiki</a><br/>
+    </p>
   </div>
   <div id="main">
     <%= yield %>

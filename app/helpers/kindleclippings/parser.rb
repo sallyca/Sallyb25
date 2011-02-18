@@ -52,6 +52,10 @@ module KindleClippings
 
       content = lines[3..-1].join("")
 
+
+      title='Personal' if title.nil?
+
+
       Clip.new(title, author, type, location, date, content.strip)
 
     end
